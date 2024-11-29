@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/SGApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/5528144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/education.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/login_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Lecturer_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/User_control.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Course.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2p9RSPdtzUeUIcvqtg2QsIXcQ6L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Admin.view.executor": "Run",
+    "Python.Admin_control.executor": "Run",
+    "Python.Lecturer_view.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.admin.executor": "Run",
+    "Python.login.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Tab's/PycharmProjects/SGApp/IMG",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tab's\PycharmProjects\SGApp\IMG" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tab's\PycharmProjects\SGApp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SGApp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/student_grading_app/view" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/student_grading_app/view/login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.login" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="" />
+      <created>1732176304647</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732176304647</updated>
+    </task>
+    <servers />
+  </component>
+</project>
