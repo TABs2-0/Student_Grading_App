@@ -3,6 +3,7 @@ from PIL import Image, ImageTk
 import tkinter as tk
 
 
+
 class Login(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -26,7 +27,7 @@ class Login(ctk.CTk):
         self.frame.grid(row=0, column=0, padx=20, pady=20)
 
         # image label
-        self.welcome_label = ctk.CTkLabel(self.frame, text="Welcome to MyApp!", font=("Arial", 18, "bold"),
+        self.welcome_label = ctk.CTkLabel(self.frame, text="Welcome to YrApp!", font=("Arial", 18, "bold"),
                                           text_color="white")
         self.welcome_label.pack(pady=(20, 10))
 

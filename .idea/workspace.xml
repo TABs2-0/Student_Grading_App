@@ -4,38 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SGApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IMG/5528144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IMG/education.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IMG/login_img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Lecturer_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/User_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Course.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/view/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this is my fist version of student grading app">
+      <changelist_data name="TABs2-0" email="yoan1661@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/IMG/Button_Background-Images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/Old-School-Image (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/myaccount.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -73,6 +55,7 @@
     "Python.login.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/Tab's/PycharmProjects/SGApp/IMG",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -130,6 +113,30 @@
       <option name="presentableId" value="Default" />
       <updated>1732176304647</updated>
     </task>
+    <task id="LOCAL-00001" summary="this is my fist version of student grading app">
+      <option name="closed" value="true" />
+      <created>1732849371899</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732849371899</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="this is my fist version of student grading app" />
+    <option name="LAST_COMMIT_MESSAGE" value="this is my fist version of student grading app" />
   </component>
 </project>

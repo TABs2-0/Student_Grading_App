@@ -15,6 +15,7 @@ class MyFrame(customtkinter.CTkFrame):
         self.label.grid(row=0, column=0, padx=20)
 
 
+
 class App(customtkinter.CTk):
     # Defaulting to light mode
     customtkinter.set_appearance_mode("dark")
@@ -22,6 +23,8 @@ class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         self.title('Admin Page')
+        self.geometry("700x700")
+        self.resizable(False,False)
 
         # Creating combobox
         self.combo_box = customtkinter.CTkComboBox(self, values=["Prob and Stat", "Comp Org", "Python", "Java"],
@@ -68,10 +71,6 @@ student_data = {
 MyFrame.bind
 
 
-#app = App()
-#app.mainloop()
-
-
 #MY WORK
 def display_semester_buttons():
     semesters = ["Fall", "Spring", "Summer"]
@@ -92,27 +91,44 @@ class Adminhome(customtkinter.CTk):
         Levels = ["Level One", "Level Two", "Level Three", "Level Four"]
         customtkinter.set_appearance_mode("dark")
         self.title("Admin_Page")
-        self.geometry("700x700")
+        self.geometry("750x750")
         semesters = ["Fall", "Spring", "Summer"]
-        # self.resizable(False, False)
+        self.resizable(False, False)
+
+        #background_Image
+
+        self.background_image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Old-School-Image (1).png").resize(
+            (750, 750))
+        self.background_photo = ImageTk.PhotoImage(self.background_image, size=(10, 30))
+
+        # Create a canvas to hold the background image
+        self.canvas = tk.Canvas(self, width=750, height=750)
+        self.canvas.pack(fill="both", expand=True)
+        self.canvas.create_image(0, 0, image=self.background_photo, anchor="center")
 
         #Nav for other widgets like myaccount
-        self.Nav_1 = ctk.CTkLabel(master=self, width=10, height=20)
+        # the image has not yet been inserted
+        self.Nav_1 = ctk.CTkLabel(master=self.canvas, width=10, height=20, text="")
         self.Nav_1.pack()
+        self.MyAccount_IMG_1 = customtkinter.CTkImage(
+            light_image=Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/myaccount.png"), size=(30, 30))
+
+        self.account_button = customtkinter.CTkButton(master=self.Nav_1, image=self.MyAccount_IMG_1, text="My Account",
+                                                      corner_radius=5)
+
+        self.account_button.grid(row=0, column=0, padx=10, sticky="w")
+        self.Logout_IMG_2 = customtkinter.CTkImage(Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/5528144.png"))
+        self.button_background_image = customtkinter.CTkImage(
+            Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Button_Background-Images.jpg"))
+        self.log_out__button = customtkinter.CTkButton(master=self.Nav_1, image=self.Logout_IMG_2, corner_radius=5,
+                                                       text="Log_Out")
+        self.log_out__button.grid(padx=300, pady=0, sticky="e", ipadx=500)
+
         self.text = " 𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕋𝕠 𝕐𝕠𝕦𝕣 ℍ𝕠𝕞𝕖 ℙ𝕒𝕘𝕖 𝔸𝕕𝕞𝕚𝕟 𝕁𝕖𝕗𝕗"  #home page text
         self.Nav = ctk.CTkLabel(master=self, width=10, height=20, anchor="center",
                                 font=("Retro cool", 24), text=self.text, text_color="white")
         self.Nav.pack()
         self.animate_text(0)
-
-        # the image has not yet been inserted
-        self.IMG_1 = customtkinter.CTkImage(
-            light_image=Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/education.png"), size=(30, 30))
-
-        self.l1 = customtkinter.CTkLabel(master=self.Nav, image=self.IMG_1)
-
-        # self.l1.pack(fill="both", expand=True)
-        self.IMG_2 = customtkinter.CTkImage(Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/5528144.png"))
 
         #frame for the semester butons display
         self.frame_0 = ctk.CTkFrame(master=self, width=200, height=700,
@@ -138,13 +154,21 @@ class Adminhome(customtkinter.CTk):
 
             for semester in semesters:
                 List = ctk.CTkButton(master=self.frame_2, width=100, height=100, fg_color="#000080", text=semester,
-                                     font=("Roboto", 15))
+                                     font=("Roboto", 15), image=self.button_background_image, command=self.display)
                 List.pack(side="left", pady=5)
-# the function below is the to apply the animation
+
+    # the function below is the to apply the animation
     def animate_text(self, index):
         if index <= len(self.text):
             self.Nav.configure(text=self.Nav.cget("text") + self.text[index])
             self.after(250, self.animate_text, index + 1)
+
+# the function below will be modified to consider the level and semesters from the db
+    def display(self):
+        self.withdraw()
+
+        app = App()
+        app.mainloop()
 
 
 admin_home = Adminhome()
