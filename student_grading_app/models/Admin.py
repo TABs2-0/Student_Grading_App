@@ -1,4 +1,4 @@
-class Admin:
+class AdminModel:
     def __init__(self,name,post,id):
         self.name =name
         self.__id=id
