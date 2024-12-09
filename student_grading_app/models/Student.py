@@ -1,6 +1,7 @@
-class Student:
+class StudentModel:
 
-    def __init__(self, name:str, matricule:str, level:str, semester:str , department:str ,gender: str , courses, status="Top_up",):
+    def __init__(self, name: str, matricule: str, level: str, semester: str, department: str, gender: str, courses,
+                 status="Top_up", ):
         self.name = name
         self.gender = gender
         self.semester = semester
@@ -8,8 +9,7 @@ class Student:
         self.level = level
         self.courses = []
         self.department = department
-        self.status = status
 
-    def setdepartment(self, department):
+    def checkdepartment(self, department):  # this function makes sure that a corect departement is selected
         if self.department.upper() not in ['ICT', 'BMS']:
             raise ValueError(" Select a valuable department ")

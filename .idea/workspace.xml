@@ -4,14 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this is my fist version of student grading app">
-      <changelist_data name="TABs2-0" email="yoan1661@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/IMG/Button_Background-Images.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IMG/Old-School-Image (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/IMG/myaccount.png" afterDir="false" />
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this is my second version of student grading app">
+      <change afterPath="$PROJECT_DIR$/sg.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/User_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/User_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Course.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin.view.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +48,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TABs2-0&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TABs2-0/Student_Grading_App&quot;,
+    &quot;accountId&quot;: &quot;7bc3cc79-5b2f-4ae2-abbb-5318eec0a481&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -45,21 +71,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Admin.view.executor": "Run",
-    "Python.Admin_control.executor": "Run",
-    "Python.Lecturer_view.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.admin.executor": "Run",
-    "Python.login.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Tab's/PycharmProjects/SGApp/IMG",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Admin.view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lecturer_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.User.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.admin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.init_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tab's/PycharmProjects/SGApp/IMG&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.database&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tab's\PycharmProjects\SGApp\IMG" />
@@ -121,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732849371899</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="this is my second version of student grading app">
+      <option name="closed" value="true" />
+      <created>1733118791940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733118791940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +177,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="this is my fist version of student grading app" />
-    <option name="LAST_COMMIT_MESSAGE" value="this is my fist version of student grading app" />
+    <MESSAGE value="this is my second version of student grading app" />
+    <option name="LAST_COMMIT_MESSAGE" value="this is my second version of student grading app" />
   </component>
 </project>
