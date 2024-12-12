@@ -2,50 +2,86 @@ import customtkinter
 import customtkinter as ctk
 import tkinter as tk
 from PIL import Image, ImageTk
+from customtkinter import *
+from tkinter import *
+from PIL import Image, ImageTk  # Import PIL modules
+import tkinter as tk
 
 
 #QEEN's WORK, Still have to connect our two ui's
 
-class MyFrame(customtkinter.CTkFrame):
+
+class MyFrame(CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
 
         # Add widgets onto the frame
-        self.label = customtkinter.CTkLabel(self)
+        self.label = CTkLabel(self)
         self.label.grid(row=0, column=0, padx=20)
 
 
-
-class App(customtkinter.CTk):
-    # Defaulting to light mode
-    customtkinter.set_appearance_mode("dark")
-
+class App(CTk):
     def __init__(self):
         super().__init__()
         self.title('Admin Page')
-        self.geometry("700x700")
-        self.resizable(False,False)
+        self.geometry("600x600")
+        # Set up canvas for background image
 
-        # Creating combobox
-        self.combo_box = customtkinter.CTkComboBox(self, values=["Prob and Stat", "Comp Org", "Python", "Java"],
-                                                   command=self.change_mode)
-        self.combo_box.pack(padx=20, pady=20)
+        # Load the image (replace with your image file path)
+        self.bg_image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Button_Background-Images.jpg")
+        self.bg_image_tk = ImageTk.PhotoImage(self.bg_image)
 
-        # Label to display the selected data
-        self.data_display = customtkinter.CTkLabel(self, text="")
-        self.data_display.pack(padx=20, pady=20)
+        self.canvas = CTkCanvas(self, height=600, width=600)
+        self.canvas.pack(fill="both", expand=True)
+        self.bg_image_on_canvas = self.canvas.create_image(370, 370, image=self.bg_image_tk, anchor="center")
+
+        # Display the background imagee
+
+        # Creating combobox on the canvas
+        self.combo_box = CTkComboBox(self, values=["Prob and Stat", "Comp Org", "Python", "Java"],
+                                     command=self.change_mode)
+        self.combo_box_window = self.canvas.create_window(300, 50, window=self.combo_box)
+
+        # Frame for the table on the canvas
+        self.table_frame = CTkFrame(self)
+        self.table_frame_window = self.canvas.create_window(350, 350, window=self.table_frame)
+
+        # Bind window resizing to the update_background method
+        self.bind("<Configure>", self.update_background)
+
+    def update_background(self, event):
+        # Resize the background image based on the current window size
+        width, height = event.width, event.height
+        resized_bg = self.bg_image.resize((width, height))
+        self.bg_image_tk = ImageTk.PhotoImage(resized_bg)
+
+        # Update the background image on the canvas
+        self.canvas.itemconfig(self.bg_image_on_canvas, image=self.bg_image_tk)
 
     def change_mode(self, choice):
-        # Change appearance mode (this is just an example; you might want to handle it differently)
-        customtkinter.set_appearance_mode(choice)
+        # Clear previous table data
+        self.clear_table()
 
         # Fetch and display data for the selected subject
         if choice in student_data:
             data = student_data[choice]
-            formatted_data = "\n".join([", ".join(map(str, row)) for row in data])
-            self.data_display.configure(text=formatted_data)
-        else:
-            self.data_display.configure(text="")
+            self.populate_table(data)
+
+    def clear_table(self):
+        # Remove all widgets from the table frame
+        for widget in self.table_frame.winfo_children():
+            widget.destroy()
+
+    def populate_table(self, data):
+        for col_index, header in enumerate(data[0]):
+            header_label = CTkLabel(self.table_frame, text=header)
+            header_label.grid(row=0, column=col_index, padx=5, pady=5)
+
+        # Create table rows
+        for row_index, row in enumerate(data[1:], start=1):
+            for col_index, value in enumerate(row):
+                value_label = CTkLabel(self.table_frame, text=value)
+                value_label.grid(row=row_index, column=col_index, padx=10, pady=10)
 
 
 # Student data
@@ -67,21 +103,6 @@ student_data = {
              ["no 10", "ICTU2021333E", 30, 10, 40],
              ["no3", "ICTU2021333E", 30, 70, 100]],
 }
-
-MyFrame.bind
-
-
-#MY WORK
-def display_semester_buttons():
-    semesters = ["Fall", "Spring", "Summer"]
-
-    display = customtkinter.CTk()
-    frame_2 = customtkinter.CTkFrame(master=display, width=200, height=700, fg_color="#FF7F50")  # orange Frame
-    frame_2.pack(pady=50, padx=10, expand=True, anchor="se", side="right")
-    for semester in semesters:
-        List = customtkinter.CTkButton(master=frame_2, fg_color="#000080", text=semester, font=("Roboto", 15))
-        List.pack(side="left", padx=5)
-    display.mainloop()
 
 
 class Adminhome(customtkinter.CTk):
@@ -105,6 +126,7 @@ class Adminhome(customtkinter.CTk):
         self.canvas = tk.Canvas(self, width=750, height=750)
         self.canvas.pack(fill="both", expand=True)
         self.canvas.create_image(0, 0, image=self.background_photo, anchor="center")
+        self.image_reference = self.background_photo  #to avoid the loss of the image
 
         #Nav for other widgets like myaccount
         # the image has not yet been inserted
@@ -159,11 +181,11 @@ class Adminhome(customtkinter.CTk):
 
     # the function below is the to apply the animation
     def animate_text(self, index):
-        if index <= len(self.text):
+        if index < len(self.text):
             self.Nav.configure(text=self.Nav.cget("text") + self.text[index])
             self.after(250, self.animate_text, index + 1)
 
-# the function below will be modified to consider the level and semesters from the db
+    # the function below will be modified to consider the level and semesters from the db
     def display(self):
         self.withdraw()
 

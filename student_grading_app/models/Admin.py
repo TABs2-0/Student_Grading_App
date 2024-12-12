@@ -1,14 +1,19 @@
 class AdminModel:
-    def __init__(self,name,post,id):
-        self.name =name
-        self.__id=id
-        self.post=post
+    def __init__(self, name, post, id):
+        self.name = name
+        self.__id = id
+        self.post = post
 
-    def add_course:
+    def read_csv_or_excel(self):
+        pass
 
-    def add_result:
+    def publish_result(self):
+        pass
 
 
-    def calculate_grades:
+def calculate_grades(self):
+    pass
 
-    def add_student:
+
+def add_student():
+    pass

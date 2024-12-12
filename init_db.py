@@ -5,13 +5,13 @@ def initialise():
     try:
         conn = sqlite3.connect('sg.db')
         cursor = conn.cursor()
-        #SQLITE USES 0 AND 1 FOR TRUE OR FALSE
+        # SQLITE USES 0 AND 1 FOR TRUE OR FALSE
         cursor.execute('''
         CREATE TABLE IF NOT EXISTS users(
         user_id TEXT PRIMARY KEY,
-        user_name TEXT NOT NULL UNIQUE,
+        username TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
-        status NOT NULL CHECK (role in("lecturer","Admin","student"))
+        role NOT NULL CHECK (role in("lecturer","Admin","student"))
       
         );
         ''')

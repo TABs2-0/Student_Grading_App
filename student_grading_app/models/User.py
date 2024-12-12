@@ -2,14 +2,23 @@ import sqlite3
 
 
 class UserModel:
-    def __init__(self, user_name, password, status):
-        self.user_name = user_name
-        self.password = password
-        self.status = status
+    def __init__(self):
+        self.conn = sqlite3.connect('../../sg.db')
+        self.create_table()
 
-    def Fetchuserrole(self, username, password):
-        con = sqlite3.connect(self.sg.db)
-        cursor = con.cursor()
-        cursor.execute("""SELECT role FROM users WHERE user_name=? AND password=?""", (username, password))
-        user_db_role = cursor.fetchone  #this attributeis needed to store the user nameand pass from our db
+    def fetchuserrole(self, username, password):
+        cursor = self.conn.cursor()
+        cursor.execute("""SELECT role FROM users WHERE username=? AND password=?""", (username, password))
+        user_db_role = cursor.fetchone()  # this attribute is needed to store the username and pass from our db
+        print(f"User_db_role all >>> {user_db_role}")
         return user_db_role
+
+    def create_table(self):
+        self.conn.execute("""CREATE TABLE IF NOT EXISTS users(
+        user_id  INTEGER PRIMARY KEY,
+        user_name TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL,
+        role NOT NULL CHECK (role in("lecturer","Admin","student"))
+      
+        );
+         """)
