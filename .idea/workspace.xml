@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Course_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SGApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SGApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMG/plus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/IMG/plus.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sg.db" beforeDir="false" afterPath="$PROJECT_DIR$/sg.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Course.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +42,11 @@
       <list>
         <option value="TABs2-0 &lt;yoan1661@gmail.com&gt;" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="merge-main-into-master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
@@ -49,35 +74,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Admin.view.executor": "Run",
-    "Python.Admin_control.executor": "Run",
-    "Python.Admin_view.executor": "Run",
-    "Python.Lecturer_view.executor": "Run",
-    "Python.Queen.executor": "Run",
-    "Python.Student_control.executor": "Run",
-    "Python.Student_view.executor": "Run",
-    "Python.User.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.admin.executor": "Run",
-    "Python.init_db.executor": "Run",
-    "Python.login.executor": "Run",
-    "Python.login_page.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "merge-main-into-master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Tab's/PycharmProjects/SGApp/IMG",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Add_results.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin.view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Admin_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Course.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Course_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lecturer_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Passed _course_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Queen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Queen_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Student_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.User.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.admin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chris_work.executor&quot;: &quot;Run&quot;,
+    &quot;Python.init_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.lecturer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UI-first-version&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tab's/PycharmProjects/SGApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tab's\PycharmProjects\SGApp\IMG" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tab's\PycharmProjects\SGApp\student_grading_app\view" />
       <recent name="C:\Users\Tab's\PycharmProjects\SGApp" />
     </key>
   </component>
@@ -95,6 +136,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/student_grading_app/view/login.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -106,6 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.login" />
+        <item itemvalue="Python.login" />
         <item itemvalue="Python.login" />
       </list>
     </recent_temporary>
@@ -125,6 +169,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732176304647</updated>
+      <workItem from="1734847261052" duration="311000" />
+      <workItem from="1734965064520" duration="4772000" />
+      <workItem from="1735199250941" duration="3243000" />
     </task>
     <task id="LOCAL-00001" summary="this is my fist version of student grading app">
       <option name="closed" value="true" />
@@ -166,8 +213,35 @@
       <option name="project" value="LOCAL" />
       <updated>1734010477106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1734010581481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734010581481</updated>
+    </task>
+    <task id="LOCAL-00007" summary="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1734065951826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734065951826</updated>
+    </task>
+    <task id="LOCAL-00008" summary="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1734606711606</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734606711608</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -186,6 +260,13 @@
     <MESSAGE value="this is my second version of student grading app" />
     <MESSAGE value="this is my second version of student grading app&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
     <MESSAGE value="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <MESSAGE value="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/login_py$main.coverage" NAME="main Coverage Results" MODIFIED="1734847540721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student_grading_app" />
+    <SUITE FILE_PATH="coverage/login_py$Admin_view.coverage" NAME="Admin_view Coverage Results" MODIFIED="1734970268966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student_grading_app/view" />
+    <SUITE FILE_PATH="coverage/login_py$login.coverage" NAME="login Coverage Results" MODIFIED="1735199496920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student_grading_app/view" />
+    <SUITE FILE_PATH="coverage/login_py$Add_results.coverage" NAME="Add_results Coverage Results" MODIFIED="1734968431441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student_grading_app/view" />
   </component>
 </project>

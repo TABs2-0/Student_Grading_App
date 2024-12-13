@@ -1,85 +1,89 @@
 import customtkinter as ctk
-from tkinter import messagebox
-from PIL import Image, ImageTk
-import tkinter as tk
-from student_grading_app import view
-from student_grading_app.controllers.User_control import Usercontrol
-from student_grading_app.models.User import UserModel
 
 
-class Login(ctk.CTk):
+# ctk.set_appearance_mode("dark")
+
+
+def forgot_password_action():
+    # Action pour le bouton "Mot de passe oublié ?"
+    print(
+        "L'option 'Mot de passe oublié ?' a été sélectionnée. Veuillez suivre la procédure de récupération du mot de passe.")
+
+
+class MyAccountApp(ctk.CTk):
     def __init__(self):
         super().__init__()
-        ctk.set_appearance_mode("dark")
 
-        self.title("Login Page")
-        self.geometry("600x400")
-        self.resizable(False, False)
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(0, weight=1)
+        # Définir la couleur de fond de la fenêtre principale
+        self.configure(bg="#87CEEB")  # Bleu ciel
 
-        self.background_image = Image.open("C:/Users/Tab's/OneDrive/Desktop/customTkinter/login_img.jpg").resize(
-            (750, 750))
-        self.background_photo = ImageTk.PhotoImage(self.background_image)
-        self.canvas = tk.Canvas(self, width=100, height=400)
-        self.canvas.grid(row=0, column=0, sticky="nsew")
-        self.canvas.create_image(0, 0, image=self.background_photo, anchor="nw")
-        self.image_reference = self.background_photo
+        # Créer la fenêtre principale
+        self.title("MyAccountApp")
+        self.geometry("600*600")
 
-        self.frame = ctk.CTkFrame(self, bg_color="transparent")
-        self.frame.grid(row=0, column=0, padx=20, pady=20)
+        # Créer un frame pour les widgets avec un fond orange
+        frame = ctk.CTkFrame(self, )
+        frame.grid(ipadx=10)
 
-        self.welcome_label = ctk.CTkLabel(self.frame, text="Welcome to YrApp!", font=("Arial", 18, "bold"),
-                                          text_color="white")
-        self.welcome_label.pack(pady=(20, 10))
+        # Créer un label
+        label = ctk.CTkLabel(frame, text="My Account", font=("Arial", 24, "bold"))
+        label.grid(column=3)
 
-        self.username_entry = ctk.CTkEntry(self.frame, width=200, placeholder_text="Username")
-        self.username_entry.pack(pady=(10, 10))
+        # Création des labels et des champs de saisie avec des valeurs par défaut
+        self.label_username = ctk.CTkLabel(frame, text="ID  :")
+        self.label_username.grid(row=3, column=1, pady=10)
+        self.entry_matricule = ctk.CTkEntry(frame, bg_color="white")
+        self.entry_matricule.insert(0, "ICTU20234009")  # Valeur par défaut
+        self.entry_matricule.grid(row=3, column=3)
 
-        self.password_entry = ctk.CTkEntry(self.frame, width=200, show="*", placeholder_text="Password")
-        self.password_entry.pack(pady=(10, 20))
+        self.label_email = ctk.CTkLabel(frame, text="Email  :")
+        self.label_email.grid(row=5, column=1)
+        self.entry_email = ctk.CTkEntry(frame, bg_color="white")
+        self.entry_email.insert(0, "daryl.tiessi@gmail.com")  # Valeur par défaut
+        self.entry_email.grid(row=5, column=3, padx=10)
 
-        self.login_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Login",
-                                          command=self.authentify)
-        self.login_button.pack(pady=10)
+        # Ajout du champ Mot de passe
+        self.label_password = ctk.CTkLabel(frame, text=" Password  :")
+        self.label_password.grid(row=7, column=1, pady=10)
+        self.entry_password = ctk.CTkEntry(frame, bg_color="white", show="*")
+        self.entry_password.insert(0, "password")  # Valeur par défaut
+        self.entry_password.grid(row=7, column=3, padx=10, pady=10)
 
-        self.signin_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Sign In")
-        self.signin_button.pack(pady=10)
+        # CheckBox pour afficher/masquer le mot de passe
+        self.show_password_var = ctk.BooleanVar()
+        self.checkbox_show_password = ctk.CTkCheckBox(frame, text="Show/Hide", variable=self.show_password_var,
+                                                      command=self.toggle_password_visibility)
+        self.checkbox_show_password.grid(pady=10, row=7, column=4, padx=5)
 
-    def authentify(self):
-        userName = self.username_entry.get()
-        password = self.password_entry.get()
+        # Bouton pour "Mot de passe oublié ?"
+        self.button_forgot_password = ctk.CTkButton(frame, text="Forgotten Password?",
+                                                    command=forgot_password_action)
+        self.button_forgot_password.grid(column=3, pady=15, padx=5)
 
-        user = Usercontrol()
+        # Création d'un bouton pour se déconnecter
+        self.button_logout = ctk.CTkButton(frame, text="Log Out", fg_color="red", command=self.logout_action)
+        self.button_logout.grid(column=3)
 
-        if userName == '' or password == '':
-            tk.messagebox.showwarning('Fill in the form first', message="Combi Fill The Form (●ˇ∀ˇ●)")
-            return
-
-        role = user.fetchrole(userName, password)
-        if role:
-            role_actual = role[0]
-            if role_actual == "Admin":
-                self.closepage()
-                admin_home = view.Admin_view.Adminhome()
-                admin_home.mainloop()
-            elif role_actual == "lecturer":
-                self.closepage()
-                lecturer_home = view.Lecturer_view.LectureView()
-                lecturer_home.mainloop()
-            elif role_actual == "student":
-                self.closepage()
-                student_home = view.Student_view.StudentValidatedCourses()
-                student_home.mainloop()
-            else:
-                tk.messagebox.showerror('Invalid Entries', message="Sorry, please try again.")
+    def toggle_password_visibility(self):
+        # Basculer la visibilité du mot de passe
+        if self.show_password_var.get():
+            self.entry_password.configure(show="")
         else:
-            tk.messagebox.showerror('Invalid Entries', message="Sorry, it looks like you are not in the system.")
+            self.entry_password.configure(show="*")
 
-    def closepage(self):
-        self.withdraw()
+    def logout_action(self):
+        # Action lorsque le bouton "Log Out" est cliqué
+        username = self.entry_username.get()
+        matricule = self.entry_matricule.get()
+        email = self.entry_email.get()
+        password = self.entry_password.get()
+        print("Déconnexion de l'utilisateur :", username)
+        print("Matricule :", matricule)
+        print("Email :", email)
+        print("Mot de passe :", password)
+        self.quit()  # Ferme l'application
 
 
 if __name__ == "__main__":
-    login = Login()
-    login.mainloop()
+    app = MyAccountApp()
+    app.mainloop()

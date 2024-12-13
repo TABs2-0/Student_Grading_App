@@ -7,6 +7,11 @@ from student_grading_app.controllers.User_control import Usercontrol
 from student_grading_app.models.User import UserModel
 
 
+def acces():
+    admin_home = Admin_view.Adminhome()
+    admin_home.mainloop()
+
+
 class Login(ctk.CTk):
     def __init__(self):
         super().__init__()
@@ -43,20 +48,26 @@ class Login(ctk.CTk):
                                           command=self.authentify)
         self.login_button.pack(pady=10)
 
-        self.signin_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Sign In")
+        self.signin_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Sign In",
+                                           command=acces)
         self.signin_button.pack(pady=10)
 
     def authentify(self):
+        #Get data
         userName = self.username_entry.get()
         password = self.password_entry.get()
+        print(userName, password)  # to make sure the correct entries reaches the if loop
 
+       #create an instance of Usercontrol
         user = Usercontrol()
 
         if userName == '' or password == '':
             tk.messagebox.showwarning('Fill in the form first', message="Combi Fill The Form (●ˇ∀ˇ●)")
             return
-
+        #fetch the data to be compared from the db
         role = user.fetchrole(userName, password)
+
+        #process them
         if role:
             role_actual = role[0].lower()
             if role_actual == "admin":
@@ -78,3 +89,7 @@ class Login(ctk.CTk):
 
     def closepage(self):
         self.withdraw()
+
+
+login = Login()
+login.mainloop()
