@@ -43,7 +43,7 @@ class Login(ctk.CTk):
                                           command=self.authentify)
         self.login_button.pack(pady=10)
 
-        self.signin_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Sign In")
+        self.signin_button = ctk.CTkButton(self.frame, border_color="#A45EE5", fg_color="#A45EE5", text="Sign In",command=self.acces)
         self.signin_button.pack(pady=10)
 
     def authentify(self):
@@ -78,3 +78,7 @@ class Login(ctk.CTk):
 
     def closepage(self):
         self.withdraw()
+    def acces(self):
+        admin_home = Admin_view.Adminhome()
+        admin_home.mainloop()
+

@@ -1,15 +1,12 @@
 import customtkinter
+from tkinter import Canvas
 import customtkinter as ctk
 import tkinter as tk
 from PIL import Image, ImageTk
-from customtkinter import *
-from tkinter import *
-from PIL import Image, ImageTk  # Import PIL modules
-import tkinter as tk
+from customtkinter import CTkLabel, CTkComboBox, CTkCanvas, CTkFrame, CTk
 
 
 #QEEN's WORK, Still have to connect our two ui's
-
 
 class MyFrame(CTkFrame):
     def __init__(self, master, **kwargs):
@@ -31,9 +28,10 @@ class App(CTk):
         self.bg_image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Button_Background-Images.jpg")
         self.bg_image_tk = ImageTk.PhotoImage(self.bg_image)
 
-        self.canvas = CTkCanvas(self, height=600, width=600)
+        self.canvas = CTkCanvas(self,height=600,width=600)
         self.canvas.pack(fill="both", expand=True)
         self.bg_image_on_canvas = self.canvas.create_image(370, 370, image=self.bg_image_tk, anchor="center")
+        self.image_reference = self.bg_image_tk
 
         # Display the background imagee
 
@@ -73,6 +71,7 @@ class App(CTk):
             widget.destroy()
 
     def populate_table(self, data):
+        # Create table headers
         for col_index, header in enumerate(data[0]):
             header_label = CTkLabel(self.table_frame, text=header)
             header_label.grid(row=0, column=col_index, padx=5, pady=5)
@@ -104,94 +103,89 @@ student_data = {
              ["no3", "ICTU2021333E", 30, 70, 100]],
 }
 
-
-class Adminhome(customtkinter.CTk):
+class Adminhome(ctk.CTk):
 
     def __init__(self):
         super().__init__()
+        self.current_index = 0
         Levels = ["Level One", "Level Two", "Level Three", "Level Four"]
-        customtkinter.set_appearance_mode("dark")
+        ctk.set_appearance_mode("dark")
         self.title("Admin_Page")
         self.geometry("750x750")
         semesters = ["Fall", "Spring", "Summer"]
-        self.resizable(False, False)
+        #self.resizable(False, False)
 
-        #background_Image
-
-        self.background_image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Old-School-Image (1).png").resize(
-            (750, 750))
-        self.background_photo = ImageTk.PhotoImage(self.background_image, size=(10, 30))
+        # Background Image
+        self._image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/pexels-karolina-grabowska-5477714.jpg").resize(
+            (2000, 1000))
+        self._photo = ImageTk.PhotoImage(self._image, size=(10, 30))
 
         # Create a canvas to hold the background image
-        self.canvas = tk.Canvas(self, width=750, height=750)
-        self.canvas.pack(fill="both", expand=True)
-        self.canvas.create_image(0, 0, image=self.background_photo, anchor="center")
-        self.image_reference = self.background_photo  #to avoid the loss of the image
-
-        #Nav for other widgets like myaccount
-        # the image has not yet been inserted
+        self.canvas = Canvas(self, width=750, height=750)
+        self.canvas.grid(row=0, column=0, rowspan=10, columnspan=10, sticky="nsew")
+        self.canvas.create_image(0, 0, image=self._photo, anchor="center")
+        self.image_reference = self._photo  # to try solve thy Pyimage notfound by pointing towards it
+        # Navigation for other widgets like "My Account"
         self.Nav_1 = ctk.CTkLabel(master=self.canvas, width=10, height=20, text="")
-        self.Nav_1.pack()
-        self.MyAccount_IMG_1 = customtkinter.CTkImage(
+        self.Nav_1.grid(row=0, column=100, columnspan=10, sticky="nsew")
+
+        self.MyAccount_IMG_1 = ctk.CTkImage(
             light_image=Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/myaccount.png"), size=(30, 30))
-
-        self.account_button = customtkinter.CTkButton(master=self.Nav_1, image=self.MyAccount_IMG_1, text="My Account",
-                                                      corner_radius=5)
-
+        self.account_button = ctk.CTkButton(master=self.Nav_1, image=self.MyAccount_IMG_1, text="My Account",
+                                            corner_radius=5)
         self.account_button.grid(row=0, column=0, padx=10, sticky="w")
-        self.Logout_IMG_2 = customtkinter.CTkImage(Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/5528144.png"))
-        self.button_background_image = customtkinter.CTkImage(
-            Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Button_Background-Images.jpg"))
-        self.log_out__button = customtkinter.CTkButton(master=self.Nav_1, image=self.Logout_IMG_2, corner_radius=5,
-                                                       text="Log_Out")
-        self.log_out__button.grid(padx=300, pady=0, sticky="e", ipadx=500)
 
-        self.text = " 𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕋𝕠 𝕐𝕠𝕦𝕣 ℍ𝕠𝕞𝕖 ℙ𝕒𝕘𝕖 𝔸𝕕𝕞𝕚𝕟 𝕁𝕖𝕗𝕗"  #home page text
-        self.Nav = ctk.CTkLabel(master=self, width=10, height=20, anchor="center",
-                                font=("Retro cool", 24), text=self.text, text_color="white")
-        self.Nav.pack()
+        self.Logout_IMG_2 = ctk.CTkImage(Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/5528144.png"))
+        self.button_background_image = ctk.CTkImage(
+            Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Button_Background-Images.jpg"))
+        self.log_out__button = ctk.CTkButton(master=self.Nav_1, image=self.Logout_IMG_2, corner_radius=5,
+                                             text="Log_Out")
+        self.log_out__button.grid(row=0, column=0, padx=10, sticky="e")
+
+        self.text = "                                                         "  # Home page text
+        self.Nav = ctk.CTkLabel(master=self.Nav_1, width=10, height=20, anchor="center", font=("Retro cool", 24),
+                                text=self.text, text_color="black")
+        self.Nav.grid(row=1, column=0, padx=10, sticky="nsew")
         self.animate_text(0)
 
-        #frame for the semester butons display
-        self.frame_0 = ctk.CTkFrame(master=self, width=200, height=700,
-                                    fg_color="#000080")  # Blue
-        self.frame_0.pack(pady=50, padx=10, anchor="w", side="right")
+        # Frame for the semester buttons display
+        self.frame_0 = ctk.CTkFrame(master=self, width=200, height=700, fg_color="#000080")  # Blue
+        self.frame_0.grid(row=2, column=9, rowspan=8, padx=10, pady=50, sticky="ne")
 
-        #  frame for the level display
+        # Frame for the level display
         self.frame = ctk.CTkFrame(master=self, width=300, height=700, fg_color="#000080")  # Blue
-        self.frame.pack(pady=50, padx=10, anchor="sw", side="left")
+        self.frame.grid(row=2, column=0, rowspan=8, padx=10, pady=50, sticky="sw")
 
-        # semester buttons for each semester
         self.frame_1 = ctk.CTkFrame(master=self.frame, width=200, height=700, fg_color="#000080")
-        self.frame_1.pack(fill="y", expand=True)
+        self.frame_1.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
         for j in range(4):
-            self.level = customtkinter.CTkLabel(master=self.frame_1, fg_color="grey", text=Levels[j],
-                                                font=("Arial", 12))
-            self.level.pack(pady=75, anchor="center")
-        for i in range(0, 4):
-            self.frame_2 = ctk.CTkFrame(master=self.frame_0, width=200, height=700, fg_color="#FF7F50")  # orange Frame
-            self.frame_2.pack(pady=20, padx=10, expand=True,
-                              side="top")  # Adjusting padding and side to display our respective semesters
+            self.level = ctk.CTkLabel(master=self.frame_1, fg_color="grey", text=Levels[j], font=("Arial", 12))
+            self.level.grid(row=j, column=100, pady=75, sticky="n")
+
+        for i in range(4):
+            self.frame_2 = ctk.CTkFrame(master=self.frame_0, width=200, height=700, fg_color="#FF7F50")  # Orange Frame
+            self.frame_2.grid(row=i, column=100, padx=10, pady=20, sticky="nsew")
 
             for semester in semesters:
                 List = ctk.CTkButton(master=self.frame_2, width=100, height=100, fg_color="#000080", text=semester,
                                      font=("Roboto", 15), image=self.button_background_image, command=self.display)
-                List.pack(side="left", pady=5)
+                List.grid(row=0, column=semesters.index(semester), pady=5, padx=5)
 
     # the function below is the to apply the animation
     def animate_text(self, index):
+        max_index= len(self.text)-1
         if index < len(self.text):
-            self.Nav.configure(text=self.Nav.cget("text") + self.text[index])
+            self.Nav.configure(text=self.Nav.cget("text") + self.text[self.current_index])
+            self.current_index +=1
             self.after(250, self.animate_text, index + 1)
-
+        else:
+            pass
     # the function below will be modified to consider the level and semesters from the db
     def display(self):
         self.withdraw()
 
         app = App()
         app.mainloop()
-
-
-admin_home = Adminhome()
-admin_home.mainloop()
+A=Adminhome()
+A.mainloop()

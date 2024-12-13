@@ -4,52 +4,57 @@ from PIL import Image, ImageTk
 import sqlite3
 import tkinter as tk
 
+import tkinter as tk
+from tkinter import messagebox
+from PIL import Image, ImageTk  # Importing Image and ImageTk from PIL
 
-class LectureView(ctk.CTk):
-    import tkinter as tk
 
+class LecturerLogin(tk.Tk):
     def __init__(self):
         super().__init__()
-        ctk.set_appearance_mode("dark")
-        self.title("Lecture Page")
 
-        # Create the main window
+        self.title("Lecturer Login")
+        self.geometry("400x500")  # Increased height for better layout
 
-        self.title("Teacher's Dashboard")
-        self.geometry("300x350")  # Adjust window size as needed
+        self.setup_ui()
 
-        self.configure(bg="#F0F0F0")  # Set background color
+    def setup_ui(self):
+        # Frame for course list
+        self.course_frame = tk.Frame(self, bg="#ADD8E6")
+        self.course_frame.pack(pady=20)
 
-        # Create the teacher name label and entry field
-        self.teacher_name_label = ctk.CTkLabel(self, text="Welcome Back  ENGR ANDREW AGBOR", text_color="black",bg_color="#ADD8E6",fg_color="#ADD8E6", font=("Arial", 12))
-        self.teacher_name_label.pack(pady=10)  # Add padding
+        # Load the background image
+        background_image = Image.open(
+            "C:/Users/Tab's/PycharmProjects/SGApp/IMG/pexels-karolina-grabowska-5477714.jpg")  # Replace with your image path
+        background_image = background_image.resize((400, 500))  # Resize to fit the window
+        self.bg_image = ImageTk.PhotoImage(background_image)
+
+        # Create a label to hold the background image
+        self.background_label = tk.Label(self.course_frame, image=self.bg_image,height=400,width=500)
+        self.background_label.place(relwidth=1, relheight=1)  # Make the label fill the window
+
+        # Create label for course list title
+        self.course_title_label = tk.Label(self.course_frame, text="Course List", font=("Arial", 12, "bold"), bg="#ADD8E6")
+        self.course_title_label.pack()
+
+        # Create list of courses
+        self.course_list = ["PROGRAMMING IN PYTHON", "COMPUTER ORGANIZATION", "TECHNICAL WRITING", "JAVA PROGRAMMING",
+                            "INTRODUCTION TO SOFTWARE", "PROBABILITY AND STATISTICS"]
+
+        # Create listbox for courses
+        self.course_listbox = tk.Listbox(self.course_frame, width=50, height=10, justify='center')  # Centered text
+        for course in self.course_list:
+            self.course_listbox.insert(tk.END, course)
+        self.course_listbox.pack(pady=10)
+
+        # Create upload button
+        self.upload_button = tk.Button(self.course_frame, text="Upload", width=10, command=self.upload)
+        self.upload_button.pack(pady=10)
+
+    def upload(self):
+        messagebox.showinfo("Upload", "Upload functionality not implemented yet.")
 
 
-
-        # Create the courses label
-        self.courses_label = ctk.CTkLabel(self, text="Courses You Already Uploaded", bg_color="#F08080", font=("Arial", 14, "bold"))
-        self.courses_label.pack(pady=10)  # Add padding
-
-        # Create the course buttons
-        course_buttons = [
-            ctk.CTkButton(self, text="Real Analysis 1           Level1--Fall--2024", bg_color="#ADD8E6", width=20, height=2, font=("Arial", 12)),
-            ctk.CTkButton(self, text="Computing in Society       Level1--Fall--2024",bg_color="#ADD8E6", width=20, height=2, font=("Arial", 12)),
-            ctk.CTkButton(self, text="Probability and Statistics  Level2--Fall--2024", bg_color="#ADD8E6", width=20, height=2, font=("Arial", 12))
-        ]
-
-        for button in course_buttons:
-            button.pack(pady=5)  # Add padding between buttons
-
-        # Create the upload button
-        upload_button = ctk.CTkButton(self, text="Upload", command=upload_button_clicked, bg_color="#808080",
-                                      font=("Arial", 12))
-        upload_button.pack(pady=10)
-
-
-def upload_button_clicked():
-    # Add your upload functionality here
-    print("Upload button clicked!")
-
-
-lecturer = LectureView()
-lecturer.mainloop()
+if __name__ == "__main__":
+    app = LecturerLogin()
+    app.mainloop()

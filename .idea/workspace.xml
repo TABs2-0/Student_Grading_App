@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <change afterPath="$PROJECT_DIR$/IMG/pexels-karolina-grabowska-5477714.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IMG/plus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sg.db" beforeDir="false" afterPath="$PROJECT_DIR$/sg.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,10 +65,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Add_results.executor": "Run",
     "Python.Admin.view.executor": "Run",
     "Python.Admin_control.executor": "Run",
     "Python.Admin_view.executor": "Run",
     "Python.Lecturer_view.executor": "Run",
+    "Python.Passed _course_view.executor": "Run",
     "Python.Queen.executor": "Run",
     "Python.Student_control.executor": "Run",
     "Python.Student_view.executor": "Run",
@@ -63,6 +78,7 @@
     "Python.__init__.executor": "Run",
     "Python.admin.executor": "Run",
     "Python.init_db.executor": "Run",
+    "Python.lecturer.executor": "Run",
     "Python.login.executor": "Run",
     "Python.login_page.executor": "Run",
     "Python.main.executor": "Run",
@@ -166,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734010477106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1734010581481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734010581481</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
