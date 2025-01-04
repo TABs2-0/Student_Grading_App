@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
-      <change afterPath="$PROJECT_DIR$/student_grading_app/controllers/Course_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SGApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SGApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IMG/plus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/IMG/plus.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sg.db" beforeDir="false" afterPath="$PROJECT_DIR$/sg.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Student_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Course.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Course.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Enrollment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
-    </list>
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -237,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734606711608</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1735985669185</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735985669185</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
