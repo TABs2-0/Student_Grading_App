@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def initialise():
+def initialise():# should be run once on a new Machine
     try:
         conn = sqlite3.connect('sg.db')
         cursor = conn.cursor()
@@ -92,9 +92,9 @@ def initialise():
         #''')
 
 
-        cursor.execute('''
-                   ALTER   TABLE Grads RENAME TO Grades
-                ''')
+       # cursor.execute('''
+        #           ALTER   TABLE Enrolled ADD COLUMN student_name TEXT NOT NULL
+         #       ''')
 
         conn.commit()
         print("successful creation")

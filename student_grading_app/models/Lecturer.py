@@ -16,7 +16,7 @@ class LecturerModel:
         Ls = cursor.fetchall()
         conn.commit()
         conn.close()
-        return Ls
+        return [l[0] for l in Ls]
 
     def Get_Lecturer_Id(self, name):
         conn = sqlite3.connect('../../sg.db')  # move two directories ouut to get yr db
@@ -27,6 +27,6 @@ class LecturerModel:
         Ls = cursor.fetchall()
         conn.commit()
         conn.close()
-        return Ls
+        return [l[0] for l in Ls]
 #L = LecturerModel()
 #L.get_lecturer_courses("John Smith")

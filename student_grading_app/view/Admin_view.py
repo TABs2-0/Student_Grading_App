@@ -2,7 +2,7 @@ import os
 
 import customtkinter
 from tkinter import Canvas
-from student_grading_app.view import Add_results
+from student_grading_app.view import Add_results,My_Account
 import customtkinter as ctk
 from student_grading_app.controllers import Admin_control, Course_control, Student_control
 import tkinter as tk
@@ -146,10 +146,10 @@ class AdminDashboardApp(ctk.CTk):
         self.update_course_display()
 
     def update_course_display(self, *args):
-        course_name = self.selected_course.get()
-        course_info = self.C.fetch_courses_from_control(course_name)  #
-        if course_info:
-            course_name, course_code, lecturer_name = course_info
+       self.course_name = self.selected_course.get()
+       self.course_info = self.C.fetch_courses_from_control(self.course_name)  #
+       if self.course_info:
+            self.course_name, course_code, lecturer_name = self.course_info
 
             # Update Lecturer and Course Code
             self.lecturer_label.configure(text=f"Lecturer: {lecturer_name}")
@@ -161,16 +161,16 @@ class AdminDashboardApp(ctk.CTk):
 
             students = self.Grades.get_grades_from_control(course_code)  #
             for student in students:
-                final_score = self.A.calculate_final_score(student[2], student[3])  #
-                grade, credit = self.A.calculate_grade(final_score)
+                self.final_score = self.A.calculate_final_score(student[2], student[3])  #
+                self.grade, self.credit = self.A.calculate_grade(self.final_score)
                 self.tree.insert("", "end", values=(
-                    student[0],
-                    student[1],
-                    student[2],
-                    student[3],
-                    final_score,
-                    grade,
-                    f"{credit:.1f}"))  #
+                    student[0],#name
+                    student[1],#mat
+                    student[2],#ca
+                    student[3],#exam
+                    self.final_score,
+                    self.grade,
+                    f"{self.credit:.1f}"))  #
 
     def open_add_student_form(self):
         form_window = ctk.CTkToplevel(self)
@@ -215,7 +215,7 @@ class AdminDashboardApp(ctk.CTk):
         def submit():
             course = course_var.get()
             try:
-                #understand whats hapenning here
+                #collecting data from different entries
                 new_student = {
                     "grade_id": entries["grade_id"].get(),
                     "mat": entries["mat"].get(),
@@ -226,7 +226,7 @@ class AdminDashboardApp(ctk.CTk):
                 }
                 self.Grades.add_grades_from_control(new_student["grade_id"], new_student["mat"],
                                                     new_student["course_code"],
-                                                    new_student["caScore"], new_student["examScore"])
+                                                    new_student["caScore"], new_student["examScore"],self.final_score,self.grade,self.credit)
                 self.update_course_display()
                 form_window.destroy()
             except ValueError:
@@ -342,6 +342,12 @@ class Adminhome(ctk.CTk):
 
     def logout(self):
         self.destroy()
+
+    def my_account(self):
+        self.withdraw()
+        Account = My_Account.MyAccountApp()
+        Account.mainloop()
+
 
 
 if __name__ == "__main__":

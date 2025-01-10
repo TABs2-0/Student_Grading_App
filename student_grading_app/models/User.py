@@ -20,5 +20,10 @@ class UserModel:
             traceback.print_exc()
         finally:
             if self.conn:
+                self.conn.commit()
                 self.conn.close()
+
+
+#M=UserModel()
+#M.fetchuserrole(" Dr Grace Hooper","gracepa$$")
 

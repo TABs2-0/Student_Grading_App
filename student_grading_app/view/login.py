@@ -2,7 +2,10 @@ import customtkinter as ctk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import tkinter as tk
-from student_grading_app.view import Admin_view, Student_view, Lecturer_view
+from student_grading_app.view import Admin_view
+from student_grading_app.view import Student_view
+from student_grading_app.view import Lecturer_view
+
 from student_grading_app.controllers.User_control import Usercontrol
 from student_grading_app.models.User import UserModel
 
@@ -58,7 +61,7 @@ class Login(ctk.CTk):
         password = self.password_entry.get()
         print(userName, password)  # to make sure the correct entries reaches the if loop
 
-       #create an instance of Usercontrol
+        #create an instance of Usercontrol
         user = Usercontrol()
 
         if userName == '' or password == '':
@@ -69,20 +72,20 @@ class Login(ctk.CTk):
 
         #process them
         if role:
-            user_name=role[1] # to always know who is in
+            user_name = role[1]  # to always know who is in
             role_actual = role[0].lower()
             if role_actual == "admin":
                 self.closepage()
                 admin_home = Admin_view.Adminhome()
                 admin_home.mainloop()
             elif role_actual == "lecturer":
-                lecturer_home=Lecturer_view.LecturerLogin(user_name)
+                lecturer_home = Lecturer_view.LecturerLogin(user_name)
                 self.closepage()
                 lecturer_home = Lecturer_view.LectureView()
                 lecturer_home.mainloop()
             elif role_actual == "student":
                 self.closepage()
-                student_home = Student_view.StudentValidatedCourses()
+                student_home = Student_view.StudentValidatedCourses(user_name)
                 student_home.mainloop()
             else:
                 tk.messagebox.showerror('Invalid Entries', message="Sorry, please try again.")
@@ -93,5 +96,5 @@ class Login(ctk.CTk):
         self.withdraw()
 
 
-#login = Login()
-#login.mainloop()
+login = Login()
+login.mainloop()

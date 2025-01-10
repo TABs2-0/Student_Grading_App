@@ -1,4 +1,6 @@
-#import customtkintera
+#import customtkinter
+from tkinter import ttk
+from student_grading_app.controllers import  Student_control,Course_control
 from PIL import Image, ImageTk
 import customtkinter
 from tkinter import ttk
@@ -13,8 +15,11 @@ from customtkinter import *
 
 
 class EnrolledCourses(customtkinter.CTk):
-    def __init__(self):
+    def __init__(self,name):
         super().__init__()
+        self.student_name=name
+        self.StudentControl=Student_control.StudentControl()
+        self.matricule=self.StudentControl.get_matricule_from_name(self.student_name)
         self.geometry('900x700')
         self.title('Enrolled Courses')
         self.configure(fg_color="#ADD8E6")  # Set light blue background color
@@ -38,10 +43,10 @@ class EnrolledCourses(customtkinter.CTk):
         self.frame = customtkinter.CTkFrame(self, width=300, corner_radius=10, fg_color="#87CEEB")  # Lighter blue for contrast
         self.frame.pack(pady=10, padx=20, side="left", anchor="nw")
 
-        self.label_name = customtkinter.CTkLabel(self.frame, text="STUDENT NAME: RODIA", font=('Arial', 14, 'bold'))
+        self.label_name = customtkinter.CTkLabel(self.frame, text=f"STUDENT NAME: {self.student_name}", font=('Arial', 14, 'bold'))
         self.label_name.pack(pady=5, padx=10)
 
-        self.label_matricule = customtkinter.CTkLabel(self.frame, text="STUDENT MATRICULE: ICTU2023",
+        self.label_matricule = customtkinter.CTkLabel(self.frame, text=f"STUDENT MATRICULE: {self.matricule}",
                                                       font=('Arial', 14, 'bold'))
         self.label_matricule.pack(pady=5, padx=10)
 
@@ -113,18 +118,22 @@ class EnrolledCourses(customtkinter.CTk):
         print(message)
 
 
-courses = ["Real Analysis 2 :            A", "Algorithm and Datastructure2:           A",
-           "linear Algebra:              D", "Discrete Math:           C", "OOP:             B"]
 
-class StudentValidatedCourses(customtkinter.CTk):
-    def __init__(self):
+class StudentValidatedCourses(customtkinter.CTk):# this class name should be changed to student ongoing courses
+    def __init__(self,name):
         super().__init__()
 
         customtkinter.set_appearance_mode("dark")
         customtkinter.set_default_color_theme("blue")
+
+        self.student_name = name# try to correct the redundancy in name and matricule
+        self.StudentControl = Student_control.StudentControl()
+        self.CourseControl=Course_control.CourseControl()
+        courses = self.CourseControl.fetch_enrolled_courses(self.student_name)
+        self.matricule = self.StudentControl.get_matricule_from_name(self.student_name)
         self.geometry("600*400")
         self.title("student Course Record")
-
+        self.validated_courses=EnrolledCourses(self.student_name)
         self.background_image = Image.open("C:/Users/Tab's/PycharmProjects/SGApp/IMG/Old-School-Image (1).png").resize(
             (400, 400))
         self.background_photo = ImageTk.PhotoImage(self.background_image, size=(10, 30))
@@ -132,7 +141,7 @@ class StudentValidatedCourses(customtkinter.CTk):
         self.canvas.pack(fill="both", expand=True)
         self.canvas.create_image(130, 130, image=self.background_photo, anchor="w")
 
-        self.label_welcome = customtkinter.CTkLabel(self, text="Hey Anelle  you have come a long way ‼️,Congrats",
+        self.label_welcome = customtkinter.CTkLabel(self, text=f"Hey {self.student_name}  you have come a long way ‼️,Congrats",
                                                     font=("Arial", 25))  # after db creation ,this text should
 
         self.label_welcome.pack(pady=10)
@@ -147,9 +156,9 @@ class StudentValidatedCourses(customtkinter.CTk):
     def display(self):
         self.withdraw()
 
-        enrolled_courses = EnrolledCourses()
+        enrolled_courses = EnrolledCourses(self.student_name)
         enrolled_courses.mainloop()
 
 
-#studentinfo = StudentValidatedCourses()
+#studentinfo = StudentValidatedCourses("Amy Courtney")
 #studentinfo.mainloop()

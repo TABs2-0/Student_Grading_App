@@ -10,6 +10,9 @@ class CourseControl:
         courses = self.C.fetch_courses_from_name(course_name)
         return courses
 
+    def fetch_enrolled_courses(self, student_name):
+        return self.C.fetch_student_enrolled_courses(student_name)
+
     def fetch_courses_from_name_control(self):
         courses = self.C.fetch_course_from_name()
         return courses

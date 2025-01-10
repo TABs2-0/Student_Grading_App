@@ -105,13 +105,13 @@ class AdminControl:
         final, gra = self.extract_marks(fichier)
         print(final)
         self.add_grades_to_csv(path, final, gra)
-        return fichier  # this statement is a test can be removed
 
+        return fichier  # this statement is a test can be removed
 
 
 # Example usage
 if __name__ == "__main__":
-
     p = "C:/Users/Tab's/PycharmProjects/SGApp/student_grading_app/controllers/Marks/index.csv"
     admin = AdminControl()
+    #admin.autodownload_marks()
     admin.main_csv_marks(p)

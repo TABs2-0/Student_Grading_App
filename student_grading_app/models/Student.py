@@ -57,6 +57,32 @@ class StudentModel:
         print(ls)
         return ls
 
+    def get_matricule_from_id(self,student_id):
+        conn = sqlite3.connect('../../sg.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+                                              SELECT matriculation_id FROM Students 
+                                              WHERE  student_id=?
+                                             ''', (student_id,))
+        ls = cursor.fetchall()
+
+        conn.commit()
+        conn.close()
+        return ls
+
+    def get_matricule_from_name(self,name):
+        conn = sqlite3.connect('../../sg.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+                                              SELECT matriculation_id FROM Students
+                                              WHERE  name=?
+                                             ''', (name,))
+        ls = cursor.fetchone()
+
+        conn.commit()
+        conn.close()
+        print(ls)
+        return ls
     def fetch_student_from_matricule(self, matricule):
         conn = sqlite3.connect('../../sg.db')
         cursor = conn.cursor()

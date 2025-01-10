@@ -32,6 +32,8 @@ class CourseModel:
         conn.close()
 
     def get_course_names(self):
+        conn = sqlite3.connect('../../sg.db')
+        self.cursor = conn.cursor()
         self.cursor.execute(''' SELECT course_name FROM Courses ''')
 
         courses = self.cursor.fetchall()
@@ -56,6 +58,26 @@ class CourseModel:
             print(f"An SQLite error occurred: {e}")
             traceback.print_exc()
 
+    def fetch_student_enrolled_courses(self, student_name):
+        try:
+            conn = sqlite3.connect('../../sg.db')
+            cursor = conn.cursor()
+            # the JOIN stetement makes a bridge to the Lecturers Table
+            cursor.execute('''
+                           SELECT c.course_name
+                           FROM Courses c
+                           JOIN Enrolled e ON c.course_code=e.course_id
+                           WHERE e.student_name=?
+
+                       ''', (student_name,))
+            courses = cursor.fetchall()
+            conn.close()
+
+            return [course[0] for course in courses]# to arrnange the output display
+        except sqlite3.Error as e:
+            print(f"An SQLite error occurred: {e}")
+            traceback.print_exc()
+
     def fetch_course_from_name(self):
         try:
             conn = sqlite3.connect('../../sg.db')
@@ -67,7 +89,13 @@ class CourseModel:
                        ''')
             courses = cursor.fetchall()
             conn.close()
+
             return [course[0] for course in courses]
+
         except sqlite3.Error as e:
             print(f"An SQLite error occurred: {e}")
             traceback.print_exc()
+
+
+#A = CourseModel()
+#A.fetch_student_enrolled_courses("vera grace")
