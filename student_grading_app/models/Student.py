@@ -43,6 +43,20 @@ class StudentModel:
         conn.close()
         return
 
+    def fetch_student_from_student_id(self, student_id):
+        conn = sqlite3.connect('../../sg.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+                                    SELECT * FROM Students 
+                                    WHERE student_id=?
+                                   ''', (student_id,))
+        ls = cursor.fetchone()
+
+        conn.commit()
+        conn.close()
+        print(ls)
+        return ls
+
     def fetch_student_from_matricule(self, matricule):
         conn = sqlite3.connect('../../sg.db')
         cursor = conn.cursor()
@@ -56,12 +70,12 @@ class StudentModel:
         conn.close()
         return ls
 
-    def add_grades(self, grade_id, matriculation_id, course_code, ca_score, exam_score):#
+    def add_grades(self, grade_id, matriculation_id, course_code, ca_score, exam_score, final, grade, credit):  #
         conn = sqlite3.connect('../../sg.db')
         cursor = conn.cursor()
-        cursor.execute('''INSERT INTO Grades(grade_id,matriculation_id, course_code,ca_score,exam_score) 
-            VALUES(?,?,?,?,?)''',
-                       (grade_id, matriculation_id, course_code, ca_score, exam_score))
+        cursor.execute('''INSERT INTO Grades(grade_id,matriculation_id, course_code,ca_score,exam_score,final,grade,credit) 
+            VALUES(?,?,?,?,?,?,?,?)''',
+                       (grade_id, matriculation_id, course_code, ca_score, exam_score, final, grade, credit))
 
         conn.commit()
         conn.close()
@@ -79,6 +93,5 @@ class StudentModel:
         return grade
 
 
-
 #S = StudentModel()
-
+#S.add_grades("GR07", 'ictu20241587', 'OS401', 40, 10, 50, "C", 3)

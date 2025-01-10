@@ -10,7 +10,8 @@ class UserModel:
         try:
             cursor = self.conn.cursor()
 
-            cursor.execute("""SELECT role FROM Users WHERE  user_name==? AND password==?""", (username, password))
+            cursor.execute("""SELECT role , user_name FROM Users WHERE  user_name==? AND password==?""",
+                           (username, password))
             user_db_role = cursor.fetchone()  # this attribute is needed to store the username and pass from our db
             print(f"User_db_role all >>> {user_db_role}")
             return user_db_role

@@ -1,6 +1,4 @@
-#import customtkinter
-from tkinter import ttk
-
+#import customtkintera
 from PIL import Image, ImageTk
 import customtkinter
 from tkinter import ttk

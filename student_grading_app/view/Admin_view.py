@@ -32,7 +32,7 @@ class AdminDashboardApp(ctk.CTk):
         self.title("Admin Dashboard")
         self.C = Course_control.CourseControl()
         self.Grades = Student_control.StudentControl()
-        self.A=Admin_control
+        self.A = Admin_control.AdminControl()
         self.geometry("1000x700")
         self.configure(fg_color=BACKGROUND_COLOR)
 
@@ -40,37 +40,37 @@ class AdminDashboardApp(ctk.CTk):
 
         # Define a dictionary to store course data
         #self.course_data = {
-         ##      "lecturer": "Mr. John Smith",  # Lecturer's name
+        ##      "lecturer": "Mr. John Smith",  # Lecturer's name
         #     "code": "STAT101",  # Course code
-         #       "students": [  # List of students enrolled in the course
-          #          {"name": "John Ode", "mat": "ICTU2021333E", "caScore": 30, "examScore": 50},  # Student 1
-           #         {"name": "No 2", "mat": "ICTU2021333E", "caScore": 30, "examScore": 10},  # Student 2
-            #    ],
-            #},
-            #"Comp Org": {  # Course name
-             #   "lecturer": "Dr. Jane Doe",  # Lecturer's name
-              #  "code": "COMP201",  # Course code
-               # "students": [  # List of students enrolled in the course
-                #    {"name": "Mayt", "mat": "ICTU2021333E", "caScore": 30, "examScore": 50},  # Student 1
-                 #   {"name": "Sam 2", "mat": "ICTU2021333E", "caScore": 30, "examScore": 10},  # Student 2
-                #],
-            #},
-            #"Data Structures": {  # Course name
-             #   "lecturer": "Prof. Alan Turing",  # Lecturer's name
-              #  "code": "COMP301",  # Course code
-               # "students": [  # List of students enrolled in the course
-                #    {"name": "Alice", "mat": "ICTU2021456A", "caScore": 40, "examScore": 45},  # Student 1
-                 #   {"name": "Bob", "mat": "ICTU2021789B", "caScore": 35, "examScore": 50},  # Student 2
-                #],
-            #},
-            #"Operating Systems": {  # Course name
-             #   "lecturer": "Dr. Grace Hopper",  # Lecturer's name
-              #  "code": "COMP401",  # Course code
-               # "students": [  # List of students enrolled in the course
-                #    {"name": "Charlie", "mat": "ICTU2021234C", "caScore": 25, "examScore": 35},  # Student 1
-                 #   {"name": "Dana", "mat": "ICTU2021567D", "caScore": 40, "examScore": 40},  # Student 2
-                #],
-            #},
+        #       "students": [  # List of students enrolled in the course
+        #          {"name": "John Ode", "mat": "ICTU2021333E", "caScore": 30, "examScore": 50},  # Student 1
+        #         {"name": "No 2", "mat": "ICTU2021333E", "caScore": 30, "examScore": 10},  # Student 2
+        #    ],
+        #},
+        #"Comp Org": {  # Course name
+        #   "lecturer": "Dr. Jane Doe",  # Lecturer's name
+        #  "code": "COMP201",  # Course code
+        # "students": [  # List of students enrolled in the course
+        #    {"name": "Mayt", "mat": "ICTU2021333E", "caScore": 30, "examScore": 50},  # Student 1
+        #   {"name": "Sam 2", "mat": "ICTU2021333E", "caScore": 30, "examScore": 10},  # Student 2
+        #],
+        #},
+        #"Data Structures": {  # Course name
+        #   "lecturer": "Prof. Alan Turing",  # Lecturer's name
+        #  "code": "COMP301",  # Course code
+        # "students": [  # List of students enrolled in the course
+        #    {"name": "Alice", "mat": "ICTU2021456A", "caScore": 40, "examScore": 45},  # Student 1
+        #   {"name": "Bob", "mat": "ICTU2021789B", "caScore": 35, "examScore": 50},  # Student 2
+        #],
+        #},
+        #"Operating Systems": {  # Course name
+        #   "lecturer": "Dr. Grace Hopper",  # Lecturer's name
+        #  "code": "COMP401",  # Course code
+        # "students": [  # List of students enrolled in the course
+        #    {"name": "Charlie", "mat": "ICTU2021234C", "caScore": 25, "examScore": 35},  # Student 1
+        #   {"name": "Dana", "mat": "ICTU2021567D", "caScore": 40, "examScore": 40},  # Student 2
+        #],
+        #},
         #}
 
         self.selected_course = ctk.StringVar(value="Prob and Stat")
@@ -147,7 +147,7 @@ class AdminDashboardApp(ctk.CTk):
 
     def update_course_display(self, *args):
         course_name = self.selected_course.get()
-        course_info = self.C.fetch_courses_from_control(course_name)#
+        course_info = self.C.fetch_courses_from_control(course_name)  #
         if course_info:
             course_name, course_code, lecturer_name = course_info
 
@@ -161,7 +161,7 @@ class AdminDashboardApp(ctk.CTk):
 
             students = self.Grades.get_grades_from_control(course_code)  #
             for student in students:
-                final_score = self.A.calculate_final_score(student[2], student[3]) #
+                final_score = self.A.calculate_final_score(student[2], student[3])  #
                 grade, credit = self.A.calculate_grade(final_score)
                 self.tree.insert("", "end", values=(
                     student[0],
@@ -170,7 +170,7 @@ class AdminDashboardApp(ctk.CTk):
                     student[3],
                     final_score,
                     grade,
-                    f"{credit:.1f}" )) #
+                    f"{credit:.1f}"))  #
 
     def open_add_student_form(self):
         form_window = ctk.CTkToplevel(self)
@@ -182,7 +182,7 @@ class AdminDashboardApp(ctk.CTk):
             pady=20)
 
         fields = [
-            ("Grade_id","grade_id"),
+            ("Grade_id", "grade_id"),
             ("Matriculation Number", "mat"),
             ("Course_code", "course_code"),
             ("CA Score", "ca"),
@@ -224,7 +224,8 @@ class AdminDashboardApp(ctk.CTk):
                     "examScore": int(entries["exam"].get())
 
                 }
-                self.Grades.add_grades_from_control(new_student["grade_id"], new_student["mat"], new_student["course_code"],
+                self.Grades.add_grades_from_control(new_student["grade_id"], new_student["mat"],
+                                                    new_student["course_code"],
                                                     new_student["caScore"], new_student["examScore"])
                 self.update_course_display()
                 form_window.destroy()

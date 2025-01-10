@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <list default="true" id="ea3e45e8-4cb4-4537-83f7-3dc1f2627960" name="Changes" comment="this version contais All the Admin operations linked to the database&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sg.db" beforeDir="false" afterPath="$PROJECT_DIR$/sg.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Admin_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Lecturer_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/controllers/Lecturer_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/controllers/Marks/index.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Lecturer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/models/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Add_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Admin_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Lecturer_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/Student_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_grading_app/view/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/student_grading_app/view/login.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +78,7 @@
     &quot;Python.Admin_view.executor&quot;: &quot;Run&quot;,
     &quot;Python.Course.executor&quot;: &quot;Run&quot;,
     &quot;Python.Course_control.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Lecturer.executor&quot;: &quot;Run&quot;,
     &quot;Python.Lecturer_view.executor&quot;: &quot;Run&quot;,
     &quot;Python.Passed _course_view.executor&quot;: &quot;Run&quot;,
     &quot;Python.Queen.executor&quot;: &quot;Run&quot;,
@@ -225,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735985669185</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="this version contais All the Admin operations linked to the database&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1735995152841</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735995152841</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +272,8 @@
     <MESSAGE value="this is my second version of student grading app&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
     <MESSAGE value="this version contains thefirst Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
     <MESSAGE value="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="this version contains all the UI's and some Backend modifications&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <MESSAGE value="this version contais All the Admin operations linked to the database&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="this version contais All the Admin operations linked to the database&#10;&#10;Signed-off-by: TABs2-0 &lt;yoan1661@gmail.com&gt;" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/login_py$main.coverage" NAME="main Coverage Results" MODIFIED="1734847540721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/student_grading_app" />

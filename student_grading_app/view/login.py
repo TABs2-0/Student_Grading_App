@@ -69,12 +69,14 @@ class Login(ctk.CTk):
 
         #process them
         if role:
+            user_name=role[1] # to always know who is in
             role_actual = role[0].lower()
             if role_actual == "admin":
                 self.closepage()
                 admin_home = Admin_view.Adminhome()
                 admin_home.mainloop()
             elif role_actual == "lecturer":
+                lecturer_home=Lecturer_view.LecturerLogin(user_name)
                 self.closepage()
                 lecturer_home = Lecturer_view.LectureView()
                 lecturer_home.mainloop()
@@ -91,5 +93,5 @@ class Login(ctk.CTk):
         self.withdraw()
 
 
-login = Login()
-login.mainloop()
+#login = Login()
+#login.mainloop()

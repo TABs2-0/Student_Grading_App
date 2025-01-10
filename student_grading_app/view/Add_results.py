@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 import tkinter as tk
 from tkinter import filedialog
 
-from student_grading_app.models import Admin,Course
+from student_grading_app.models import Admin, Course, Student
 
 PRIMARY_COLOR = "#3B82F6"  # Blue
 SECONDARY_COLOR = "#F3F4F6"  # Light Gray
@@ -23,7 +23,9 @@ class Add_students_results(CTk):
         super().__init__()
 
         self.AdminModel = Admin.AdminModel()
-        self.CourseModel=Course.CourseModel()
+        self.CourseModel = Course.CourseModel()
+        self.StudentModel = Student.StudentModel()
+        self.AdminControl = Admin_control.AdminControl()
         global plus_image  # the use of global her was an attempt to solve the pyimage5 problem but
         self.plus_image = plus_image
         set_appearance_mode("dark")
@@ -88,7 +90,7 @@ class Add_students_results(CTk):
                                     border_width=5, border_color="#333333", command=self.select_file)
         self.add_button.grid(pady=10, padx=20)  # Added padding for better spacing
 
-        self.add_button = CTkButton(self.entry_frame, text="Add", fg_color="#333333", width=45, height=45)
+        self.add_button = CTkButton(self.entry_frame, text="Add", fg_color="#333333", width=45, height=45,command=self.process_grade())
         self.add_button.grid(pady=20, padx=20, sticky="e")  # Added padding for better spacing
 
     def select_file(self):
@@ -96,12 +98,26 @@ class Add_students_results(CTk):
         entry_field = self.add_entry
         entry_field.delete(0, customtkinter.END)
         entry_field.insert(0, path)
-        self.extract_file()
+        return path
 
-    def extract_file(self):
+# this function is still having some bugs to fix
+    def process_grade(self):
+
         path = self.add_entry.get()
-        read_file = Admin_control.read_csv(path)
-        extract_file = Admin_control.extract_marks(read_file)
+        complete_file = self.AdminControl.main_csv_marks(path)  #caling the csv file with all the calculations Done
+
+        for rows in complete_file:
+
+            grade_id = complete_file["GradeID"]  #fetching the grade Id from the file
+            student_id = complete_file["StudentID"]
+            matriculation_id = self.StudentModel.fetch_student_from_student_id(student_id)
+            course_code = self.course_code_entry.get()
+            ca_score = complete_file["CAScore"]
+            exam_score = complete_file["ExamScore"]
+            final_score = complete_file["FinalScore"]
+            grade = complete_file["Grade"]
+            credit = complete_file["Credits"]
+            self.StudentModel.add_grades(grade_id,matriculation_id,course_code,ca_score,exam_score,final_score,grade,credit)
 
 
 if __name__ == "__main__":
